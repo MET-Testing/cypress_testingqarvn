@@ -1,0 +1,24 @@
+{
+  "name": "cypress_testingqarvn",
+  "version": "1.0.0",
+  "description": "Web de pruebas para practicar Cypress con Javacript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metlabtesting/cypress_testingqarvn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/metlabtesting/cypress_testingqarvn/issues"
+  },
+  "homepage": "https://github.com/metlabtesting/cypress_testingqarvn#readme",
+  "devDependencies": {
+    "cypress": "^10.3.0",
+    "cypress-xpath": "^2.0.1"
+  }
+}
