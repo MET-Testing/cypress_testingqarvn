@@ -1,7 +1,10 @@
-describe("This is your test project title", () => {
+describe("Llenar formulario ComboBox", () => {
   before(() => {
     // runs once before all tests
-    cy.visit(/combobox-dependiente/);
+    cy.visit("/combobox-dependiente/");
+    cy.get("#menu-item-178").next().trigger("mouseover");
+    cy.get(".et-show-dropdown").should("be.visible", { timeout: 7000 });
+    cy.wait(3000);
   });
   beforeEach(() => {
     // runs before every it() test block
@@ -12,13 +15,8 @@ describe("This is your test project title", () => {
   after(() => {
     // runs once after all tests
   });
-  context("This is your test suite title", () => {
-    // -- Start: Cypress Tests --
-    it("This is your test case one title", () => {
-      // Write your test case one here
-    });
-    it("This is your test case two title", () => {
-      // Write your test case two here
-    });
+  // -- Start: Cypress Tests --
+  it("llenar el formulario exitosamente", () => {
+    // Write your test case one here
   });
 });
