@@ -1,15 +1,37 @@
 class Combobox {
   constructor() {
-    this.inputName = "#wsf-1-field-54";
-    this.inputLastName = "#wsf-1-field-55";
-    this.inputEmail = "#wsf-1-field-56";
-    this.inputPhone = "#wsf-1-field-57";
-    this.direction = "#wsf-1-field-58";
-    this.inputPHP = "#wsf-1-label-59-row-1";
-    this.inputPython = "#wsf-1-label-60-row-2";
-    this.submitBtn = "#wsf-1-field-62";
+    this.elements = [
+      { label: "#wsf-1-label-54", input: "#wsf-1-field-54", name: "Nombre" },
+      { label: "#wsf-1-label-55", input: "#wsf-1-field-55", name: "Apellido" },
+      { label: "#wsf-1-label-56", input: "#wsf-1-field-56", name: "Email" },
+      { label: "#wsf-1-label-57", input: "#wsf-1-field-57", name: "Telefono" },
+      { label: "#wsf-1-label-58", input: "#wsf-1-field-58", name: "Direccion" },
+    ];
+
+    this.radioInputCypress = "#wsf-1-field-60-row-1";
+    this.radioInutWebdriver = "#wsf-1-field-60-row-2";
+    this.radioInutSelenium = "#wsf-1-field-60-row-3";
 
     this.alertSucess = ".wsf-alert-success";
+  }
+
+  get = {
+    inputName: () => cy.get("#wsf-1-field-54"),
+    inputLastName: () => cy.get("#wsf-1-field-55"),
+    inputEmail: () => cy.get("#wsf-1-field-56"),
+    inputPhone: () => cy.get("#wsf-1-field-57"),
+    direction: () => cy.get("#wsf-1-field-58"),
+    inputPHP: () => cy.get("#wsf-1-label-59-row-1"),
+    inputPython: () => cy.get("#wsf-1-label-60-row-2"),
+    submitBtn: () => cy.get("#wsf-1-field-62"),
+  };
+
+  getTextLabel(element) {
+    return cy.get(element).invoke("text");
+  }
+
+  getTextPlaceholderInput(element) {
+    return cy.get(element).invoke("attr", "placeholder");
   }
 }
 
