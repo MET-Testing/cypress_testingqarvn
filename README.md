@@ -64,3 +64,75 @@ npx cypress open
 # Menciones
 
 Autor de la web: [ Rodrigo Igor Villanueva Nieto](https://testingqarvn.com.es/sobre-mi/)
+
+
+
+# Gherkin by Caro
+Feature: Form Submission
+  
+ #  Scenario: Completing form fields with real names and surnames
+    Given a user is accessing the form
+    When the user completes all fields with real names and surnames
+    Then the form submission should be successful
+    
+ #  Scenario: Valid email input format
+    Given a user is accessing the form
+    When the user submits the form with a valid email address
+    Then the form submission should be successful
+       
+ #  Scenario: Matching placeholders with input labels
+    Given a user is accessing the form
+    Then each input field's placeholder should match its corresponding label
+    
+ #  Scenario: Dynamic behavior of comboboxes
+    Given a user is accessing the form
+    When the user selects an option in the first combobox
+    Then the options in the second combobox should update accordingly
+   Examples:
+      | Windows  |
+         | Windows 7 |
+         | Windows 10 |
+         | Windows Server |
+      |   Linux  |
+         |   Ubuntu  |
+         |   Debian  |
+         |   Read Hat  |
+      |   Mac  |
+         |   Capitan  |
+         |   Yosemite  |
+         |   Mavericks  |
+
+    
+ #  Scenario Outline: Checkbox behavior
+    Given a user is accessing the form
+    When the user selects <number> checkboxes
+    Then the selected checkboxes should be successfully chosen
+    
+    Examples:
+      | PHP  |
+      |   PYTHON  |
+      |   JS  |
+    
+ #  Scenario Outline: Radiobutton behavior
+    Given a user is accessing the form
+    When the user selects <number> radiobuttons
+    Then only one radiobutton should be successfully chosen
+    
+    Examples:
+      | CypressIO |
+      |   WebdriverIO  |
+      |   Selenium  |
+    
+ 
+
+ #  Scenario: Completing form fields with valid data
+    Given a user is accessing the form
+    When the user completes all fields with valid data
+    And clicks the submit button
+    Then the form submission should be successful
+
+ #  Scenario: Successful form submission
+    Given a user is accessing the form
+    When the user completes all fields with valid data
+    And clicks the submit button
+    Then a green toast with the message "Gracias por tu encuesta" should appear
