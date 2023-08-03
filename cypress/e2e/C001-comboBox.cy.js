@@ -65,7 +65,7 @@ describe("Llenar formulario ComboBox", () => {
       .should("contain", "Gracias por tu encuesta.");
   });
 
-  it.only("cambiar combobox", () => {
+  it("cambiar combobox", () => {
     comboboxData.forEach(({ so, options }) => {
       comboboxPage.get.comboBoxOS().select(so).should("have.value", so);
 
@@ -79,5 +79,20 @@ describe("Llenar formulario ComboBox", () => {
         }
       });
     });
+  });
+
+  it.only("seleccion de multiples checkbox a la vez", () => {
+    // const arrayCheckboxes = comboboxPage.get.checkBoxes();
+    // const checkboxRandom1 = Cypress._.sample(arrayCheckboxes);
+    // const checkboxRandom2 = Cypress._.sampleSize(arrayCheckboxes, 2);
+
+    // Seleccionar todos los chekbox
+    cy.get(`input[type = "checkbox"]`)
+      .siblings("label")
+      .click({ multiple: true })
+      .should("be.checked");
+
+    // Seleccionar 1 checkbox random
+    // Seleccionar 2 checkbox random
   });
 });

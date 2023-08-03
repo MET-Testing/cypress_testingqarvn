@@ -28,6 +28,7 @@ class Combobox {
     comboBoxWindowsOptions: () => cy.get("#wsf-1-field-63"),
     comboBoxLinuxOptions: () => cy.get("#wsf-1-field-64"),
     comboBoxMacOptions: () => cy.get("#wsf-1-field-65"),
+    checkBoxes: () => cy.get("input[type='checkbox']"),
   };
 
   getTextLabel(element) {
