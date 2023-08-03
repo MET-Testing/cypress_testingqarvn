@@ -24,6 +24,10 @@ class Combobox {
     inputPHP: () => cy.get("#wsf-1-label-59-row-1"),
     inputPython: () => cy.get("#wsf-1-label-60-row-2"),
     submitBtn: () => cy.get("#wsf-1-field-62"),
+    comboBoxOS: () => cy.get("#wsf-1-field-61"),
+    comboBoxWindowsOptions: () => cy.get("#wsf-1-field-63"),
+    comboBoxLinuxOptions: () => cy.get("#wsf-1-field-64"),
+    comboBoxMacOptions: () => cy.get("#wsf-1-field-65"),
   };
 
   getTextLabel(element) {

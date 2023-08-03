@@ -1,5 +1,6 @@
 import personalData from "../fixtures/C001-personalDataComboBox.json";
 import { comboboxPage } from "../support/pages/C001-comboBox.page";
+import comboboxData from "../fixtures/C001-comboboxesData.json";
 
 describe("Llenar formulario ComboBox", () => {
   // Ir a la web https://testingqarvn.com.es
@@ -62,5 +63,21 @@ describe("Llenar formulario ComboBox", () => {
       .should("be.visible", { timeout: 7000 })
       .invoke("text")
       .should("contain", "Gracias por tu encuesta.");
+  });
+
+  it.only("cambiar combobox", () => {
+    comboboxData.forEach(({ so, options }) => {
+      comboboxPage.get.comboBoxOS().select(so).should("have.value", so);
+
+      options.forEach((option) => {
+        if (so == "Windows") {
+          comboboxPage.get.comboBoxWindowsOptions().should("contain", option);
+        } else if (so == "Linux") {
+          comboboxPage.get.comboBoxLinuxOptions().should("contain", option);
+        } else if (so == "Mac") {
+          comboboxPage.get.comboBoxMacOptions().should("contain", option);
+        }
+      });
+    });
   });
 });
