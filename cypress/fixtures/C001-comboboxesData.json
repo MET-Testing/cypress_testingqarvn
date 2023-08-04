@@ -1,0 +1,14 @@
+[
+  {
+    "so": "Windows",
+    "options": ["Windows 7", "Windows 10", "Windows Server"]
+  },
+  {
+    "so": "Linux",
+    "options": ["Ubuntu", "Debian", "Read Hat"]
+  },
+  {
+    "so": "Mac",
+    "options": ["Capitan", "Yosemite", "Mavericks"]
+  }
+]
