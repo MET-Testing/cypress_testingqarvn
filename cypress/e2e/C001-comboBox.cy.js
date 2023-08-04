@@ -81,18 +81,30 @@ describe("Llenar formulario ComboBox", () => {
     });
   });
 
-  it.only("seleccion de multiples checkbox a la vez", () => {
-    // const arrayCheckboxes = comboboxPage.get.checkBoxes();
-    // const checkboxRandom1 = Cypress._.sample(arrayCheckboxes);
-    // const checkboxRandom2 = Cypress._.sampleSize(arrayCheckboxes, 2);
-
-    // Seleccionar todos los chekbox
-    cy.get(`input[type = "checkbox"]`)
-      .siblings("label")
-      .click({ multiple: true })
-      .should("be.checked");
-
+  it("seleccion de multiples checkbox a la vez", () => {
+    // Otros posibles escenarios
     // Seleccionar 1 checkbox random
     // Seleccionar 2 checkbox random
+
+    // Seleccionar todos los checkbox
+    cy.get(`input[type = "checkbox"]`)
+
+      .siblings("label")
+      .click({ multiple: true });
+
+    cy.get("input[type='checkbox']").should("be.checked");
+  });
+
+  it("que varios radio button no puedan estar seleccionados a la vez", () => {
+    const radioValues = ["CypressIO", "WebdriverIO", "Selenium"];
+
+    radioValues.forEach((value) => {
+      cy.get('[type="radio"]').check(value, { force: true });
+      cy.get(`[type="radio"][value="${value}"]`)
+        .should("have.value", value)
+        .should("be.checked");
+
+      cy.get('[type="radio"]').not(`[value=${value}]`).should("not.be.checked");
+    });
   });
 });
