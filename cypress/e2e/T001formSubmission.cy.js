@@ -11,7 +11,7 @@ describe("T001formSubmission", () => {
     });
   });
 
-  it("Succesfull form submission", () => {
+  it("Successful form submission", () => {
     cy.fixture("T001customerData").then((data) => {
       data.forEach((customer) => {
         // Completing form fields with real names and surnames
