@@ -3,21 +3,6 @@ import { comboboxPage } from "../support/pages/C001-comboBox.page";
 import comboboxData from "../fixtures/C001-comboboxesData.json";
 
 describe("Llenar formulario ComboBox", () => {
-  // Ir a la web https://testingqarvn.com.es
-  // Ingresar al menú “Prácticas QA”
-  // Seleccionar “Combobox dependiente”
-  // Completar todos los campos con datos válidos
-  //    - email con formato @...com
-  //    - nombre y apellido “reales”
-  // Hacer click en el botón “submit”
-
-  //   ## Validaciones
-  // - que se muestre el mensaje luego de hacer submit: "Gracias por tu encuesta"
-  // - que los placeholders coincidan con las labels de los campos
-  // - que el segundo combobox cambie al variar el valor del primero
-  // - que varios checkbox puedan estar seleccionados a la vez
-  // - que varios radio button no puedan estar seleccionados a la vez
-
   Cypress.on("fail", (error, runnable) => {
     // Check if the shouldFail flag is set to false
     // If true, suppress the failure and allow the test execution to continue
